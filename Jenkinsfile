@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven_3.9.10' // <- Tên đúng với Global Tool
+        maven 'Maven_3.9.10'
     }
 
     environment {
@@ -31,7 +31,7 @@ pipeline {
 
         stage('Run App') {
             steps {
-                bat "start /b java -jar target\\%JAR_NAME%"
+                bat "java -jar target\\%JAR_NAME%"
             }
         }
     }
