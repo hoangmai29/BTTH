@@ -7,69 +7,45 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping("/")
-    public String home() {
+    public String welcomePage() {
         return """
             <html>
                 <head>
-                    <title>Trang chủ</title>
+                    <title>Chào mừng</title>
                     <style>
                         body {
-                            background-color: #f0f8ff;
+                            background: linear-gradient(to right, #83a4d4, #b6fbff);
+                            color: #333;
+                            font-family: Arial, sans-serif;
                             text-align: center;
                             padding-top: 100px;
-                            font-family: Arial, sans-serif;
                         }
-                        a.button {
-                            display: inline-block;
-                            padding: 10px 20px;
+                        h1 {
+                            font-size: 28px;
+                            margin-bottom: 40px;
+                        }
+                        .button {
+                            padding: 12px 25px;
                             font-size: 16px;
                             background-color: #4CAF50;
                             color: white;
-                            text-decoration: none;
+                            border: none;
                             border-radius: 5px;
-                            margin-top: 20px;
+                            cursor: pointer;
+                            transition: background-color 0.3s ease;
+                        }
+                        .button:hover {
+                            background-color: #45a049;
                         }
                     </style>
                 </head>
                 <body>
-                    <h1>Trang chủ</h1>
-                    <a href="/hello" class="button">Chuyển đến trang Hello</a>
-                </body>
-            </html>
-        """;
-    }
-
-    @GetMapping("/hello")
-    public String hello() {
-        return """
-            <html>
-                <head>
-                    <title>Hello</title>
-                    <style>
-                        body {
-                            background-color: #ffefd5;
-                            text-align: center;
-                            padding-top: 100px;
-                            font-family: Arial, sans-serif;
-                        }
-                        a.button {
-                            display: inline-block;
-                            padding: 10px 20px;
-                            font-size: 16px;
-                            background-color: #008CBA;
-                            color: white;
-                            text-decoration: none;
-                            border-radius: 5px;
-                            margin-top: 20px;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <h1>Hello</h1>
-                    <a href="/" class="button">Quay lại trang chủ</a>
+                    <h1>Chào mừng bạn đến với công ty TNHH một thành viên của MNH</h1>
+                    <button class="button" onclick="alert('OK')">OK</button>
                 </body>
             </html>
         """;
     }
 }
+
 
