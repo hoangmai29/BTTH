@@ -30,10 +30,18 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Testing -->
+        <!-- Spring Boot Starter Test (bao gồm JUnit + Mockito core) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Mockito Inline để mock final class và sửa lỗi MockMaker -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-inline</artifactId>
+            <version>5.11.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
