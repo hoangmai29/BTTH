@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven 3.9.10' // Tên cấu hình Maven trong Jenkins
-        jdk 'JDK 17'         // Tên cấu hình JDK trong Jenkins
-    }
-
     environment {
         APP_NAME = 'cicd_bt'
         JAR_NAME = 'cicd_bt-0.0.1-SNAPSHOT.jar'
@@ -14,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/<your-username>/<your-repo>.git', branch: 'main'
+                git url: 'https://github.com/hoangmai29/BTTH.git', branch: 'main'
             }
         }
 
