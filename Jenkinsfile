@@ -15,19 +15,19 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Run App') {
             steps {
-                sh 'nohup java -jar target/${JAR_NAME} &'
+                bat 'start /b java -jar target\\%JAR_NAME%'
             }
         }
     }
