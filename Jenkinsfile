@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.8.8' // Tên cấu hình Maven trong Jenkins
+        maven 'Maven 3.9.10' // Tên cấu hình Maven trong Jenkins
         jdk 'JDK 17'         // Tên cấu hình JDK trong Jenkins
     }
 
