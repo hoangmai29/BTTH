@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven_3.9.10' // <- Tên đúng với Global Tool
+    }
+
     environment {
         APP_NAME = 'cicd_bt'
         JAR_NAME = 'cicd_bt-0.0.1-SNAPSHOT.jar'
@@ -27,7 +31,7 @@ pipeline {
 
         stage('Run App') {
             steps {
-                bat 'start /b java -jar target\\%JAR_NAME%'
+                bat "start /b java -jar target\\%JAR_NAME%"
             }
         }
     }
